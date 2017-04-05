@@ -1,15 +1,17 @@
 ---
 - name: Chapter1 Testing Playbooks
   hosts: all
+  become: yes
 
   tasks:
-  - name: Testing connectivity
-    ping:
   - name: Install other packages
-    yum: 
+    yum:
       name: "{{item}}"
       state: present
     with_items:
-           - mongodb
-           - tomcat
+           - mlocate
+           - wget
            - gedit
+           - mongodb
+    changed_when: false
+
