@@ -1,0 +1,16 @@
+---
+ - name: Install mlocate
+   hosts: gangliagroup
+   remote_user: ansible
+   become: yes
+
+   tasks:
+   - name: new install mlocate
+     yum:
+      name: mlocate
+      state: present
+  
+   - name: Update the database
+     command: updatedb
+     register: locatestat
+     changed_when: false
