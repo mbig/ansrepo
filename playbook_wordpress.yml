@@ -20,6 +20,11 @@
     yum:
       name: mariadb
       state: present
+  - name: Install supporting packages for mariadb
+    yum:
+      name: MySQL-python
+      state: present
+      
   - name: Generate new root password for mariadb
     command: openssl rand -hex 7
     register: mariadb_new_root_pass
