@@ -1,0 +1,10 @@
+---
+- name: Installing WordPress
+  hosts: web1
+  become: yes
+
+  tasks:
+  - name: Installing PHP
+    yum:
+      name: php
+      state: present
