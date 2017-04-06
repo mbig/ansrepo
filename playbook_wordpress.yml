@@ -8,3 +8,11 @@
     yum:
       name: php
       state: present
+  - name: Install supporting php packages
+    yum:
+      name: "{{item}}"
+    with_items:
+        - php
+        - php-fpm
+        - php-mysql
+        - php-xml
