@@ -17,6 +17,18 @@
         - php-mysql
         - php-xml
   - name: Install mariadb
-      yum:
-        name: mariadb
-        state: present
+    yum:
+      name: mariadb
+      state: present
+  - name: Generate new root password for mariadb
+    command: openssl rand -hex 7
+    register: mariadb_new_root_pass
+
+  - name: Remove anonymous users from mariadb
+    mysql_user: 
+          name: ""
+          state: absent
+  - name: Remove test database
+    mysql_db:
+         name: test
+         state: absent
