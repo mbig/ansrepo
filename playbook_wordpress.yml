@@ -16,3 +16,7 @@
         - php-fpm
         - php-mysql
         - php-xml
+  - name: Install mariadb
+      yum:
+        name: mariadb
+        state: present
