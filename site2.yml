@@ -4,9 +4,11 @@
    remote_user: ansible
    become: yes
    roles:
-     - gchongong.php
-     - gchongong.mariadb
-     - gchongong.wordpress
+     - mbig.php
+     - mbig.mariadb
+     - mbig.nginx
+     - mbig.wordpress
+
 
    tasks:
    - name: new install mlocate
