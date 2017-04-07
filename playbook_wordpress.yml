@@ -38,17 +38,25 @@
    # mysql_db:
     #     name: test
      #    state: absent
-  - name: Update mariadb root password
-    mysql_user:
-           name: root
-           host: "{{item}}"
-           password: "{{mariadb_new_root_pass.stdout}}"
-    with_items:
+#  - name: Update mariadb root password
+ #   mysql_user:
+  #         name: root
+   #        host: "{{item}}"
+    #       password: "{{mariadb_new_root_pass.stdout}}"
+    #with_items:
       #   - "{{ansible_hostname}}"      
-         - 127.0.0.1
+     #    - 127.0.0.1
        #  - ::1
         # - localhost
 
   #- name: Output new root password
    # debug:
     #   msg: "New root password is {{mariadb_new_root_pass.stdout}}"
+  - name: Install Nginx
+    yum: 
+      name: nginx 
+      state: present
+  - name: Start nginx Service
+    service:
+      name: nginx
+      state: running
