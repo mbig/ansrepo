@@ -1,0 +1,12 @@
+---
+ - name: WordPress Role
+   hosts: web1
+   remote_user: ansible
+   become: yes
+   roles:
+     - gchongong.php
+     - gchongong.mariadb
+     - gchongong.wordpress
+
+   tasks:
+   - name: new install mlocate
