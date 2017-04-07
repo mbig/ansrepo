@@ -27,7 +27,7 @@
 
   - name: Generate new root password for mariadb
     command: openssl rand -hex 7 
-    creates: /root/.my.my.cnf ## Will create file is it does not exists, otherwise ignore.
+#    creates: /root/.my.my.cnf ## Will create file is it does not exists, otherwise ignore.
     register: mariadb_new_root_pass
 
 #  - name: Remove anonymous users from mariadb
