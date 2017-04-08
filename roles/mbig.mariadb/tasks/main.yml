@@ -1,2 +1,10 @@
 ---
 # tasks file for gchongong.mariadb
+- name: Install mariadb server
+  yum:
+    name: mariadb-server
+    state: present
+- name: Install supporting packages for mariadb
+  yum:
+    name: MySQL-python
+    state: present

@@ -10,5 +10,5 @@
      - mbig.wordpress
 
 
-   tasks:
-   - name: new install mlocate
+#   tasks:
+ #  - name: new install mlocate
