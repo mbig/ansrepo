@@ -1,2 +1,10 @@
 ---
 # tasks file for gchongong.nginx
+- name: Install Nginx
+  yum: 
+    name: nginx 
+    state: present
+- name: Start nginx Service
+  service:
+    name: nginx
+    state: running
